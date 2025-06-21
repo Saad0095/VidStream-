@@ -1,14 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Feed from './components/Feed'
+import Home from './components/Home'
+import { useState } from 'react'
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState('New')
 
   return (
     <div className='bg-white text-black dark:bg-black dark:text-white min-h-screen'>
-      <Navbar />
+      <Navbar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
       <Routes>
-        <Route element={<Feed />} />
+        <Route path='/' element={<Home selectedCategory={selectedCategory}/>} />
       </Routes>
     </div>
   )

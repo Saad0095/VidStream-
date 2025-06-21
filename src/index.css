@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
+@plugin 'tailwind-scrollbar';
 
 @theme {
     --color-primaryColor:#AB00FF;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
