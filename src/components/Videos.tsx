@@ -1,35 +1,15 @@
 import { useEffect } from "react";
 import type { VideosProps } from "../utils/interfaces";
+import Loading from "./Loading";
 
 const Videos = ({ videos }: VideosProps) => {
-    if (!videos) return <p className="text-white">Loading...</p>;
     useEffect(() => {
         console.log(videos);
-        /* channelId
-        : 
-        "UC_vt34wimdCzdkrzVejwX9g"
-        channelTitle
-        : 
-        "Geo News"
-        description
-        : 
-        "Geo News 12AM Headlines #AsimMunir #USPakistanRelations #WhiteHouseMeeting #AsimMunirInUS #TrumpMeetsMunir ..."
-        liveBroadcastContent
-        : 
-        "none"
-        publishTime
-        : 
-        "2025-06-20T20:10:11Z"
-        publishedAt
-        : 
-        "2025-06-20T20:10:11Z"
-        thumbnails
-        : 
-        {default: {…}, medium: {…}, high: {…}}
-        title
-        : 
-        "Iran-Israel War Latest Updates! - Headlines Geo News 12 AM (21th June 2025)" */
+
     }, [videos])
+
+    if (!videos) return <Loading />;
+
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {videos.map((video) => video.id.videoId && (
