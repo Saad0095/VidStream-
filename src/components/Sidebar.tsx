@@ -14,13 +14,12 @@ const sidebarLinks = [
   { name: "Shorts", href: "/shorts", category: "Shorts" },
 ];
 
-const Sidebar = ({ isMenuOpen, setIsMenuOpen, selectedCategory, setSelectedCategory }: SidebarProps) => {
+const Sidebar = ({ isMenuOpen, setIsMenuOpen}: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
   const handleLinkClick = (link: string) => {
-    // setSelectedCategory(category)
     navigate(`${link}`)
     setIsMenuOpen(false)
   }

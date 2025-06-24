@@ -1,18 +1,16 @@
-export interface NavbarProps {
-  selectedCategory: string;
-  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
-}
+// export interface NavbarProps {
+//   selectedCategory: string;
+//   setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+// }
 
 export interface SidebarProps {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  selectedCategory: string;
-  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface HomeProps {
-  selectedCategory: string;
-}
+// export interface HomeProps {
+//   selectedCategory: string;
+// }
 
 export interface Video {
   id: {

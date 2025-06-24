@@ -1,9 +1,9 @@
 import Videos from "../components/Videos"
 import { fetchData } from "../utils/api";
 import { useEffect, useState } from "react"
-import type { HomeProps, Video } from "../utils/interfaces";
+import type { Video } from "../utils/interfaces";
 
-const Home = ({ selectedCategory }: HomeProps) => {
+const Home = () => {
   const [videos, setVideos] = useState<Video[] | null>(null)
   const fetchVideos = async () => {
     try {
@@ -16,7 +16,7 @@ const Home = ({ selectedCategory }: HomeProps) => {
 
   useEffect(() => {
     fetchVideos()
-  }, [selectedCategory])
+  }, [])
 
   return (
     <div className="px-10 py-20">
