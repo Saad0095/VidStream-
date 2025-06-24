@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 import { FaXmark } from "react-icons/fa6";
 import type { SidebarProps } from "../utils/interfaces";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const sidebarLinks = [
-  { name: "Home", href: "/", category: "New" },
+  { name: "Home", href: "/", category: "" },
   { name: "Trending", href: "/trending", category: "Trending" },
   { name: "Gaming", href: "/gaming", category: "Gaming" },
+  { name: "Fashion", href: "/fashion", category: "Fashion" },
   { name: "Sports", href: "/sports", category: "Sports" },
   { name: "News", href: "/news", category: "News" },
   { name: "Education", href: "/education", category: "Education" },
@@ -14,9 +16,12 @@ const sidebarLinks = [
 
 const Sidebar = ({ isMenuOpen, setIsMenuOpen, selectedCategory, setSelectedCategory }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
 
-  const handleLinkClick = (category: string) => {
-    setSelectedCategory(category)
+  const handleLinkClick = (link: string) => {
+    // setSelectedCategory(category)
+    navigate(`${link}`)
     setIsMenuOpen(false)
   }
 
@@ -33,18 +38,18 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen, selectedCategory, setSelectedCateg
   });
 
   return (
-    <div ref={sidebarRef} className={`fixed top-0 left-0 max-h-screen  w-72  scrollbar  scrollbar-thumb-gray-500 scrollbar-track-transparent bg-white dark:bg-gray-950 dark:text-white shadow shadow-gray-600 transition-all duration-300 ease-in-out transform z-10 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <div ref={sidebarRef} className={`h-screen fixed top-0 left-0 max-h-screen overflow-auto w-72  scrollbar  scrollbar-thumb-gray-500 scrollbar-track-transparent bg-white dark:bg-gray-950 dark:text-white shadow shadow-gray-600 transition-all duration-300 ease-in-out transform z-10 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
       <FaXmark className="fixed top-5 right-5 text-3xl font-bold cursor-pointer" onClick={() => setIsMenuOpen(false)} />
-      <div className="flex flex-col p-10 gap-6">
+      <ul className="flex flex-col p-10 gap-6">
         {sidebarLinks.map((link, index) => (
-          <p
+          <li
             key={index}
-            className={`text-lg font-bold p-4 rounded-full ${link.category === selectedCategory ? "bg-primaryColor text-white" : "hover:bg-gray-200 dark:hover:bg-gray-800"}`}
-            onClick={() => handleLinkClick(link.category)}>
+            className={`cursor-pointer text-lg font-bold p-4 rounded-full decoration-0 ${link.href === pathname ? "bg-primaryColor text-white" : "hover:bg-gray-200 dark:hover:bg-gray-800"}`}
+            onClick={() => handleLinkClick(link.href)}>
             {link.name}
-          </p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

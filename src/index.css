@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 @plugin 'tailwind-scrollbar';
 
 @theme {
     --color-primaryColor:#AB00FF;
+}
+
+*{
+    font-family: "Roboto", sans-serif;
 }
 
 ::-webkit-scrollbar-button {
