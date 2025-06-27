@@ -23,7 +23,7 @@ const SearchBar = () => {
                 value={searchTerm}
                 className="h-full w-4/5 p-4 outline-none border border-gray-300 rounded-l-full  dark:bg-white dark:text-black dark:border-none" placeholder="Search..."
                 onChange={(e) => setSearchTerm(e.target.value)} />
-            <div className="h-full w-1/5 flex justify-center items-center border rounded-r-full bg-gray-200 border-gray-300  dark:bg-white dark:text-black  dark:border-none">
+            <div className="h-full w-1/5 flex justify-center items-center border rounded-r-full bg-gray-200 border-gray-300 dark:bg-white dark:text-black  dark:border-none">
                 <FaSearch />
             </div>
         </form>

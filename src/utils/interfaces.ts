@@ -1,16 +1,7 @@
-// export interface NavbarProps {
-//   selectedCategory: string;
-//   setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
-// }
-
 export interface SidebarProps {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-// export interface HomeProps {
-//   selectedCategory: string;
-// }
 
 export interface Video {
   id: {
@@ -35,4 +26,37 @@ export interface Video {
 
 export interface VideosProps {
   videos: Video[] | null;
+}
+
+export interface VideoDetailProps {
+  title: string;
+  description: string;
+  channelTitle: string;
+  viewCount: string;
+  likeCount: string;
+  commentCount: string;
+}
+
+export interface VideoCardProps {
+  video: Video;
+}
+
+export interface VideoCommentsProps {
+  id: string | undefined;
+}
+
+export interface Comment {
+  id: string;
+  snippet: {
+    topLevelComment: {
+      id: string;
+      snippet: {
+        authorDisplayName: string;
+        authorProfileImageUrl: string;
+        textDisplay: string;
+        publishedAt: string;
+        likeCount: number;
+      };
+    };
+  };
 }
