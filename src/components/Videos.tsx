@@ -6,7 +6,7 @@ const Videos = ({ videos }: VideosProps) => {
     if (!videos) return <Loading />;
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-x-hidden">
             {videos.map((video) => video.id.videoId && (
                 <VideoCard key={video.id.videoId} video={video} />
             ))}

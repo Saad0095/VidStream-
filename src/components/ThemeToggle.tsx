@@ -20,7 +20,7 @@ const ThemeToggle = () => {
     }, [isDarkMode]);
 
     return (
-        <div className="text-2xl cursor-pointer" onClick={() => setIsDarkMode(!isDarkMode)}>
+        <div className="text-xl cursor-pointer" onClick={() => setIsDarkMode(!isDarkMode)}>
             {isDarkMode ? <FaSun className="text-white" /> : <FaMoon className="text-black" />}
         </div>
     )

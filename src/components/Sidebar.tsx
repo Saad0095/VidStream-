@@ -14,7 +14,7 @@ const sidebarLinks = [
   { name: "Shorts", href: "/shorts", category: "Shorts" },
 ];
 
-const Sidebar = ({ isMenuOpen, setIsMenuOpen}: SidebarProps) => {
+const Sidebar = ({ isMenuOpen, setIsMenuOpen }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -37,9 +37,11 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen}: SidebarProps) => {
   });
 
   return (
-    <div ref={sidebarRef} className={`h-screen fixed top-0 left-0 max-h-screen overflow-auto w-72  scrollbar  scrollbar-thumb-gray-500 scrollbar-track-transparent bg-white dark:bg-gray-950 dark:text-white shadow shadow-gray-600 transition-all duration-300 ease-in-out transform z-10 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <div ref={sidebarRef} className={`h-screen fixed top-0 left-0 max-h-screen overflow-auto w-72  scrollbar  scrollbar-thumb-gray-500 scrollbar-track-transparent bg-gray-50 dark:bg-gray-950 dark:text-white shadow shadow-gray-600 transition-all duration-300 ease-in-out transform z-10 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
       <FaXmark className="fixed top-5 right-5 text-3xl font-bold cursor-pointer" onClick={() => setIsMenuOpen(false)} />
+
       <ul className="flex flex-col p-10 gap-6">
+        <h1 className="text-2xl font-bold cursor-pointer text-center" onClick={() => navigate("/")}><span className="text-primaryColor">Vid</span>Stream</h1>
         {sidebarLinks.map((link, index) => (
           <li
             key={index}
