@@ -22,7 +22,7 @@ const SearchPage = () => {
     }, [searchTerm])
 
     return (
-        <div className="px-10 py-20">
+        <div className="px-5 md:px-10 py-20">
             <h1 className="text-2xl dark:text-white font-bold p-5">Search Results for <span className="text-primaryColor">{searchTerm ? searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1) : ""} </span></h1>
             <Videos videos={videos} />
         </div>

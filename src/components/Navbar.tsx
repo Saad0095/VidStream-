@@ -8,10 +8,10 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <div className="w-full fixed h-20 flex justify-between items-center px-10 bg-gray-50 \ dark:bg-gray-950 dark:text-white shadow">
+        <div className="w-full fixed h-20 flex justify-between items-center px-10 bg-gray-50 dark:bg-black dark:text-white shadow-md dark:shadow-zinc-900">
             <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
             <div className="flex gap-4 justify-center items-center">
-                <RiMenu2Fill className="text-2xl font-bold cursor-pointer" onClick={() => setIsMenuOpen(true)} />
+                <RiMenu2Fill className="text-2xl cursor-pointer" onClick={() => setIsMenuOpen(true)} />
             </div>
             <SearchBar />
             <ThemeToggle />

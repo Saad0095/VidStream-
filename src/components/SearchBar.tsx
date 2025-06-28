@@ -15,17 +15,15 @@ const SearchBar = () => {
     }
 
     return (
-        <form className="searchbar flex h-10 items-center w-40 md:w-96" onSubmit={handleSubmit}>
+        <form className="flex h-full w-full items-center text-black dark:text-white px-8 md:px-14 space-x-4" onSubmit={handleSubmit}>
+            <FaSearch />
             <input
                 type="text"
                 name=""
                 id=""
                 value={searchTerm}
-                className="h-full w-4/5 p-4 outline-none border border-gray-300 rounded-l-full  dark:bg-white dark:text-black dark:border-none" placeholder="Search..."
+                className="h-full w-full p-4 outline-none border-none placeholder-black dark:placeholder-white" placeholder="Search..."
                 onChange={(e) => setSearchTerm(e.target.value)} />
-            <div className="h-full w-1/5 flex justify-center items-center border rounded-r-full bg-gray-200 border-gray-300 dark:bg-white dark:text-black  dark:border-none">
-                <FaSearch />
-            </div>
         </form>
     )
 }

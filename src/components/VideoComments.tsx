@@ -15,7 +15,7 @@ const VideoComments = ({ id }: VideoCommentsProps) => {
   }, [id]);
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 hidden md:block">
       <h2 className="text-xl font-bold mb-4">Comments</h2>
       {comments?.map((comment) => {
         const c = comment.snippet.topLevelComment.snippet;
@@ -27,10 +27,11 @@ const VideoComments = ({ id }: VideoCommentsProps) => {
               className="rounded-full w-10 h-10"
             />
             <div>
-              <p className="font-semibold">{c.authorDisplayName}</p>
-              <p className="text-gray-300 text-sm">{new Date(c.publishedAt).toLocaleDateString()}</p>
+              <div className='flex gap-2 items-center'>
+                <p className="font-semibold">{c.authorDisplayName}</p>
+                <p className="text-gray-300 text-sm">{new Date(c.publishedAt).toLocaleDateString()}</p>
+              </div>
               <p className="mt-1">{c.textDisplay}</p>
-              <p className="text-sm text-gray-500">{c.likeCount} Likes</p>
             </div>
           </div>
         );

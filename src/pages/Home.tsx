@@ -19,7 +19,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="px-10 py-20">
+    <div className="px-5 md:px-10 py-20">
       <h1 className="text-2xl dark:text-white font-bold p-5"><span className="text-primaryColor">New </span>Videos</h1>
       <Videos videos={videos} />
     </div>
